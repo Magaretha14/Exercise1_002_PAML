@@ -9,7 +9,7 @@ class WelcomePage extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               padding: const EdgeInsets.only(top: 80),
@@ -27,6 +27,25 @@ class WelcomePage extends StatelessWidget {
                 "Welcome to Pokedex \n You can find your favorite pokemom here",
                 style: TextStyle(color: Colors.grey),
                 textAlign: TextAlign.center,
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(130),
+              alignment: Alignment.center,
+              child: Image.network(
+                "https://th.bing.com/th/id/OIP.ueqdIuJb_z6afkwjy1e2igHaHX?w=205&h=204&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+                width: 200,
+                height: 200,
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(30),
+              child: FloatingActionButton(
+                onPressed: () {},
+                child: const Icon(
+                  Icons.arrow_forward,
+                  color: Colors.white,
+                ),
               ),
             )
           ],
