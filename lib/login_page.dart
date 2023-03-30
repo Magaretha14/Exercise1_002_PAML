@@ -1,7 +1,20 @@
+import 'package:exercise1_002/homepage.dart';
+import 'package:exercise1_002/register_page.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  final _formKey = GlobalKey<FormState>();
+
+  String? name;
+
+  String? password;
 
   @override
   Widget build(BuildContext context) {
@@ -38,81 +51,116 @@ class LoginPage extends StatelessWidget {
                     fontSize: 18),
               ),
             ),
-            Container(
-              margin: const EdgeInsets.only(top: 20),
-              padding: const EdgeInsets.only(left: 20),
-              alignment: Alignment.centerLeft,
-              child: const Text(
-                "Name",
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    color: Colors.blue,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15),
-              ),
-            ),
-            Container(
-              padding: const EdgeInsets.only(left: 10),
-              margin: const EdgeInsets.only(right: 20),
-              child: TextFormField(
-                decoration: const InputDecoration(
-                  border: UnderlineInputBorder(),
-                  hintText: 'Enter your name',
-                  hintStyle: TextStyle(fontSize: 20),
-                  prefixIcon: Icon(
-                    Icons.person,
-                    color: Colors.blue,
+            Form(
+              key: _formKey,
+              child: Column(children: [
+                Container(
+                  margin: const EdgeInsets.only(top: 20),
+                  padding: const EdgeInsets.only(left: 20),
+                  alignment: Alignment.centerLeft,
+                  child: const Text(
+                    "Name",
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                        color: Colors.blue,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15),
                   ),
                 ),
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(top: 20),
-              padding: const EdgeInsets.only(left: 20),
-              alignment: Alignment.centerLeft,
-              child: const Text(
-                "Password",
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    color: Colors.blue,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15),
-              ),
-            ),
-            Container(
-              padding: const EdgeInsets.only(left: 10),
-              margin: const EdgeInsets.only(right: 20),
-              child: TextFormField(
-                obscureText: true,
-                decoration: const InputDecoration(
-                  border: UnderlineInputBorder(),
-                  hintText: 'Enter your password',
-                  hintStyle: TextStyle(fontSize: 20),
-                  prefixIcon: Icon(
-                    Icons.lock,
-                    color: Colors.blue,
-                  ),
-                  suffixIcon: Icon(
-                    Icons.remove_red_eye,
-                    color: Colors.grey,
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              padding: const EdgeInsets.only(top: 100),
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(80),
+                Container(
+                  padding: const EdgeInsets.only(left: 10),
+                  margin: const EdgeInsets.only(right: 20),
+                  child: TextFormField(
+                    decoration: const InputDecoration(
+                      border: UnderlineInputBorder(),
+                      hintText: 'Enter your name',
+                      hintStyle: TextStyle(fontSize: 20),
+                      prefixIcon: Icon(
+                        Icons.person,
+                        color: Colors.blue,
+                      ),
                     ),
-                    minimumSize: const Size(350, 60)),
-                child: const Text(
-                  "Sign In",
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Please enter your name";
+                      }
+                      return null;
+                    },
+                    onSaved: (value) {
+                      name = value;
+                    },
+                  ),
                 ),
-              ),
+                Container(
+                  margin: const EdgeInsets.only(top: 20),
+                  padding: const EdgeInsets.only(left: 20),
+                  alignment: Alignment.centerLeft,
+                  child: const Text(
+                    "Password",
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                        color: Colors.blue,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(left: 10),
+                  margin: const EdgeInsets.only(right: 20),
+                  child: TextFormField(
+                    obscureText: true,
+                    decoration: const InputDecoration(
+                      border: UnderlineInputBorder(),
+                      hintText: 'Enter your password',
+                      hintStyle: TextStyle(fontSize: 20),
+                      prefixIcon: Icon(
+                        Icons.lock,
+                        color: Colors.blue,
+                      ),
+                      suffixIcon: Icon(
+                        Icons.remove_red_eye,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Please enter your password";
+                      } else if (value.length < 6) {
+                        return "Password must be at least 6 characters";
+                      }
+                      return null;
+                    },
+                    onSaved: (value) {
+                      password = value;
+                    },
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(top: 100),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        _formKey.currentState!.save();
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const HomePage(),
+                          ),
+                        );
+                      }
+                    },
+                    style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(80),
+                        ),
+                        minimumSize: const Size(350, 60)),
+                    child: const Text(
+                      "Sign In",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+              ]),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -136,3 +184,19 @@ class LoginPage extends StatelessWidget {
     );
   }
 }
+
+/*String? validateName(String? value) {
+  if (value == null || value.isEmpty) {
+    return "Please enter your name";
+  }
+  return null;
+}
+
+String? validatePassword(String? value) {
+  if (value == null || value.isEmpty) {
+    return "Please enter your password";
+  } else if (value.length < 6) {
+    return "Password must be at least 6 characters";
+  }
+  return null;
+}*/
