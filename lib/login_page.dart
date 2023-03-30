@@ -71,7 +71,7 @@ class LoginPage extends StatelessWidget {
               padding: const EdgeInsets.only(left: 20),
               alignment: Alignment.centerLeft,
               child: const Text(
-                "Name",
+                "Password",
                 textAlign: TextAlign.left,
                 style: TextStyle(
                     color: Colors.blue,
@@ -83,14 +83,34 @@ class LoginPage extends StatelessWidget {
               padding: const EdgeInsets.only(left: 10),
               margin: const EdgeInsets.only(right: 20),
               child: TextFormField(
+                obscureText: true,
                 decoration: const InputDecoration(
                   border: UnderlineInputBorder(),
-                  hintText: 'Enter your name',
+                  hintText: 'Enter your password',
                   hintStyle: TextStyle(fontSize: 20),
                   prefixIcon: Icon(
-                    Icons.person,
+                    Icons.lock,
                     color: Colors.blue,
                   ),
+                  suffixIcon: Icon(
+                    Icons.remove_red_eye,
+                    color: Colors.grey,
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.only(top: 100),
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(80),
+                    ),
+                    minimumSize: const Size(350, 60)),
+                child: const Text(
+                  "Sign In",
+                  style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
             )
