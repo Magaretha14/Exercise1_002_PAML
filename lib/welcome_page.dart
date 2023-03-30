@@ -50,6 +50,7 @@ class WelcomePage extends StatelessWidget {
                     ),
                   );
                 },
+                backgroundColor: Colors.amber,
                 child: const Icon(
                   Icons.arrow_forward,
                   color: Colors.white,

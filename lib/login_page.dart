@@ -6,7 +6,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -23,7 +23,7 @@ class LoginPage extends StatelessWidget {
                 "Let's get started.",
                 style: TextStyle(
                     color: Colors.amber,
-                    fontSize: 30,
+                    fontSize: 40,
                     fontWeight: FontWeight.bold),
               ),
             ),
@@ -32,10 +32,68 @@ class LoginPage extends StatelessWidget {
               child: const Text(
                 "There's No Sense In Going Out Of \n Your Way To Get Somebody To Like You.",
                 textAlign: TextAlign.center,
-                style:
-                    TextStyle(fontWeight: FontWeight.bold, color: Colors.grey),
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.grey,
+                    fontSize: 18),
               ),
             ),
+            Container(
+              margin: const EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.only(left: 20),
+              alignment: Alignment.centerLeft,
+              child: const Text(
+                "Name",
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                    color: Colors.blue,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.only(left: 10),
+              margin: const EdgeInsets.only(right: 20),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                  border: UnderlineInputBorder(),
+                  hintText: 'Enter your name',
+                  hintStyle: TextStyle(fontSize: 20),
+                  prefixIcon: Icon(
+                    Icons.person,
+                    color: Colors.blue,
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.only(left: 20),
+              alignment: Alignment.centerLeft,
+              child: const Text(
+                "Name",
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                    color: Colors.blue,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.only(left: 10),
+              margin: const EdgeInsets.only(right: 20),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                  border: UnderlineInputBorder(),
+                  hintText: 'Enter your name',
+                  hintStyle: TextStyle(fontSize: 20),
+                  prefixIcon: Icon(
+                    Icons.person,
+                    color: Colors.blue,
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),
