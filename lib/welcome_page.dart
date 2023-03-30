@@ -1,3 +1,4 @@
+import 'package:exercise1_002/login_page.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -41,13 +42,20 @@ class WelcomePage extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(30),
               child: FloatingActionButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LoginPage(),
+                    ),
+                  );
+                },
                 child: const Icon(
                   Icons.arrow_forward,
                   color: Colors.white,
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
