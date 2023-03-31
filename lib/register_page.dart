@@ -41,6 +41,27 @@ class _RegisterPageState extends State<RegisterPage> {
             Container(
               alignment: Alignment.center,
               padding: const EdgeInsets.only(top: 10),
+              width: 100.0,
+              height: 100.0,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image: NetworkImage(
+                      'https://th.bing.com/th?id=OIP.FQUJFW5UFNsyGXZbL8s5lAHaGp&w=263&h=236&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2'),
+                ),
+              ),
+            ),
+            Container(
+              alignment: Alignment.center,
+              padding: const EdgeInsets.only(top: 30),
+              child: const Text(
+                "Register",
+                style: TextStyle(
+                    fontSize: 30,
+                    color: Colors.amber,
+                    fontWeight: FontWeight.bold),
+              ),
             )
           ],
         ),
