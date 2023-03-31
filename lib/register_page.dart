@@ -133,9 +133,9 @@ class _RegisterPageState extends State<RegisterPage> {
                         color: Colors.blue,
                       ),
                     ),
-                    validator: validateName,
+                    validator: validateEmail,
                     onSaved: (value) {
-                      name = value;
+                      email = value;
                     },
                   ),
                 ),
@@ -207,14 +207,14 @@ class _RegisterPageState extends State<RegisterPage> {
                         color: Colors.grey,
                       ),
                     ),
-                    validator: validatePassword,
+                    validator: validateRePassword,
                     onSaved: (value) {
-                      password = value;
+                      repassword = value;
                     },
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.only(top: 70),
+                  padding: const EdgeInsets.only(top: 40),
                   child: ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
@@ -246,4 +246,40 @@ class _RegisterPageState extends State<RegisterPage> {
       ),
     );
   }
+}
+
+String? validateName(String? value) {
+  if (value == null || value.isEmpty) {
+    return "Please enter your name";
+  } else if (value.length < 6) {
+    return "Name must be at least 6 characters";
+  }
+  return null;
+}
+
+String? validateEmail(String? value) {
+  if (value == null || value.isEmpty) {
+    return "Please enter your email";
+  } else if (!value.contains('@')) {
+    return "Please enter a valid email";
+  }
+  return null;
+}
+
+String? validatePassword(String? value) {
+  if (value == null || value.isEmpty) {
+    return "Please enter your password";
+  } else if (value.length < 6) {
+    return "Password must be at least 6 characters";
+  }
+  return null;
+}
+
+String? validateRePassword(String? value) {
+  if (value == null || value.isEmpty) {
+    return "Please enter your password";
+  } else if (value.length < 6) {
+    return "Password must be at least 6 characters";
+  }
+  return null;
 }
