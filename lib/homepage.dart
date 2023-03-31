@@ -54,6 +54,17 @@ class HomePage extends StatelessWidget {
                 )
               ],
             ),
+            Container(
+              alignment: Alignment.topLeft,
+              padding: const EdgeInsets.only(left: 20),
+              child: const Text(
+                "Pokedex",
+                style: TextStyle(
+                    color: Colors.amber,
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
           ],
         ),
       ),
