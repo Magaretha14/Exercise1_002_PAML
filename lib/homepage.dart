@@ -65,6 +65,78 @@ class HomePage extends StatelessWidget {
                     fontWeight: FontWeight.bold),
               ),
             ),
+            Container(
+              padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
+              child: TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        borderSide: BorderSide.none),
+                    filled: true,
+                    fillColor: Colors.grey[200],
+                    contentPadding: const EdgeInsets.symmetric(
+                        horizontal: 16.0, vertical: 14.0),
+                    hintText: 'Search Pokemon',
+                    hintStyle: const TextStyle(
+                        color: Colors.grey, fontWeight: FontWeight.normal),
+                    prefixIcon: const Icon(Icons.search)),
+              ),
+            ),
+            Container(
+              child: Row(
+                children: [
+                  Container(
+                    margin: const EdgeInsets.only(top: 20, left: 20),
+                    width: 100,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.circular(10.0),
+                      color: Colors.lightBlue,
+                      image: const DecorationImage(
+                        fit: BoxFit.fill,
+                        image: NetworkImage(
+                            'https://assets.pokemon.com/assets/cms2/img/pokedex/full/058.png'),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.only(left: 20),
+                              child: Text('#001'),
+                            ),
+                            Container(
+                              padding: const EdgeInsets.only(left: 5),
+                              child: const Text(
+                                'Bulbasur',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                            )
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.only(left: 10),
+                              child: Text('Grass'),
+                            ),
+                            Container(
+                              padding: const EdgeInsets.only(left: 5),
+                              child: Text('Poison'),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
