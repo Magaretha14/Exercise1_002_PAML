@@ -80,12 +80,7 @@ class _LoginPageState extends State<LoginPage> {
                         color: Colors.blue,
                       ),
                     ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return "Please enter your name";
-                      }
-                      return null;
-                    },
+                    validator: validateName,
                     onSaved: (value) {
                       name = value;
                     },
@@ -122,14 +117,7 @@ class _LoginPageState extends State<LoginPage> {
                         color: Colors.grey,
                       ),
                     ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return "Please enter your password";
-                      } else if (value.length < 6) {
-                        return "Password must be at least 6 characters";
-                      }
-                      return null;
-                    },
+                    validator: validatePassword,
                     onSaved: (value) {
                       password = value;
                     },
@@ -185,7 +173,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 }
 
-/*String? validateName(String? value) {
+String? validateName(String? value) {
   if (value == null || value.isEmpty) {
     return "Please enter your name";
   }
@@ -199,4 +187,4 @@ String? validatePassword(String? value) {
     return "Password must be at least 6 characters";
   }
   return null;
-}*/
+}
