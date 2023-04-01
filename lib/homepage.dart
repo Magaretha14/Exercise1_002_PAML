@@ -83,6 +83,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Container(
+              padding: EdgeInsets.only(left: 20, right: 20),
               child: Row(
                 children: [
                   Container(
@@ -102,41 +103,49 @@ class HomePage extends StatelessWidget {
                   ),
                   Container(
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Row(
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.only(left: 20),
-                              child: Text('#001'),
-                            ),
-                            Container(
-                              padding: const EdgeInsets.only(left: 5),
-                              child: const Text(
-                                'Bulbasur',
-                                style: TextStyle(fontWeight: FontWeight.bold),
+                        Container(
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    padding: const EdgeInsets.only(left: 20),
+                                    child: Text('#001'),
+                                  ),
+                                  Container(
+                                    padding: const EdgeInsets.only(left: 5),
+                                    child: const Text(
+                                      'Bulbasur',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  )
+                                ],
                               ),
-                            )
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.only(left: 10),
-                              child: Text('Grass'),
-                            ),
-                            Container(
-                              padding: const EdgeInsets.only(left: 5),
-                              child: Text('Poison'),
-                            )
-                          ],
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    padding: const EdgeInsets.only(left: 10),
+                                    child: Text('Grass'),
+                                  ),
+                                  Container(
+                                    padding: const EdgeInsets.only(left: 5),
+                                    child: Text('Poison'),
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

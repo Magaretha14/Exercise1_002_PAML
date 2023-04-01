@@ -19,6 +19,7 @@ class _RegisterPageState extends State<RegisterPage> {
   String? email;
   String? password;
   String? repassword;
+  final _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -193,6 +194,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   padding: const EdgeInsets.only(left: 10),
                   margin: const EdgeInsets.only(right: 20),
                   child: TextFormField(
+                    controller: _passwordController,
                     obscureText: true,
                     decoration: const InputDecoration(
                       border: UnderlineInputBorder(),
@@ -207,7 +209,14 @@ class _RegisterPageState extends State<RegisterPage> {
                         color: Colors.grey,
                       ),
                     ),
-                    validator: validateRePassword,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Please enter your password";
+                      } else if (value != _passwordController.text) {
+                        return "Password must be the same";
+                      }
+                      return null;
+                    },
                     onSaved: (value) {
                       repassword = value;
                     },
@@ -222,7 +231,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const HomePage(),
+                            builder: (context) => HomePage(name: name),
                           ),
                         );
                       }
@@ -275,11 +284,15 @@ String? validatePassword(String? value) {
   return null;
 }
 
-String? validateRePassword(String? value) {
+//final _passwordController = TextEditingController();
+
+/*String? validateRePassword(
+  String? value,
+) {
   if (value == null || value.isEmpty) {
     return "Please enter your password";
-  } else if (value.length < 6) {
-    return "Password must be at least 6 characters";
+  } else if (value != _passwordController.text) {
+    return "Password must be the same";
   }
   return null;
-}
+}*/
