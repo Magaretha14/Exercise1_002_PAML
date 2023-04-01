@@ -101,21 +101,21 @@ class _HomePageState extends State<HomePage> {
                   PokemonList(
                       gambar:
                           'https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png',
-                      nomor: '003',
+                      nomor: '#003',
                       nama_pokemon: 'Charmander',
                       deskripsi:
                           'It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.'),
                   PokemonList(
                       gambar:
                           'https://assets.pokemon.com/assets/cms2/img/pokedex/full/037.png',
-                      nomor: '037',
+                      nomor: '#037',
                       nama_pokemon: 'Vulpix',
                       deskripsi:
                           'While young, it has six gorgeous tails. When it grows, several new tails are sprouted.'),
                   PokemonList(
                       gambar:
                           'https://assets.pokemon.com/assets/cms2/img/pokedex/full/059.png',
-                      nomor: '059',
+                      nomor: '#059',
                       nama_pokemon: 'Arcanine',
                       deskripsi:
                           'An ancient picture scroll shows that people were captivated by its movement as it ran through prairies.')
