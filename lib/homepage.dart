@@ -22,44 +22,46 @@ class _HomePageState extends State<HomePage> {
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Row(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.only(top: 30, left: 20),
-                    child: RichText(
-                      text: TextSpan(
-                        text: 'Hallo, ',
-                        style: const TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black),
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: '${widget.name}',
-                            style: const TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.amber),
-                          ),
-                        ],
+              SizedBox(
+                child: Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.only(top: 30, left: 20),
+                      child: RichText(
+                        text: TextSpan(
+                          text: 'Hallo, ',
+                          style: const TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black),
+                          children: <TextSpan>[
+                            TextSpan(
+                              text: '${widget.name}',
+                              style: const TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.amber),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(top: 30, left: 200),
-                    width: 60,
-                    height: 60,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.grey,
-                      image: DecorationImage(
-                        fit: BoxFit.fill,
-                        image: NetworkImage(
-                            'https://assets.pokemon.com/assets/cms2/img/pokedex/full/058.png'),
+                    Container(
+                      margin: const EdgeInsets.only(top: 30, left: 200),
+                      width: 60,
+                      height: 60,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.grey,
+                        image: DecorationImage(
+                          fit: BoxFit.fill,
+                          image: NetworkImage(
+                              'https://assets.pokemon.com/assets/cms2/img/pokedex/full/058.png'),
+                        ),
                       ),
-                    ),
-                  )
-                ],
+                    )
+                  ],
+                ),
               ),
               Container(
                 alignment: Alignment.topLeft,
