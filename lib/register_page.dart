@@ -102,7 +102,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         color: Colors.blue,
                       ),
                     ),
-                    validator: validateName,
+                    validator: validateName, // Validasi nama pengguna.
                     onSaved: (value) {
                       name = value;
                     },
@@ -134,7 +134,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         color: Colors.blue,
                       ),
                     ),
-                    validator: validateEmail,
+                    validator: validateEmail, // Validasi email.
                     onSaved: (value) {
                       email = value;
                     },
@@ -171,7 +171,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         color: Colors.grey,
                       ),
                     ),
-                    validator: validatePassword,
+                    validator: validatePassword, // Validasi password.
                     onSaved: (value) {
                       password = value;
                     },
@@ -257,32 +257,12 @@ class _RegisterPageState extends State<RegisterPage> {
   }
 }
 
+// Fungsi untuk validasi nama pengguna.
 String? validateName(String? value) {
   if (value == null || value.isEmpty) {
     return "Please enter your name";
-  } else if (value.length < 6) {
-    return "Name must be at least 6 characters";
-  }
-  return null;
-}
+  } else if (value.length < 6
 
-String? validateEmail(String? value) {
-  if (value == null || value.isEmpty) {
-    return "Please enter your email";
-  } else if (!value.contains('@')) {
-    return "Please enter a valid email";
-  }
-  return null;
-}
-
-String? validatePassword(String? value) {
-  if (value == null || value.isEmpty) {
-    return "Please enter your password";
-  } else if (value.length < 6) {
-    return "Password must be at least 6 characters";
-  }
-  return null;
-}
 
 //final _passwordController = TextEditingController();
 

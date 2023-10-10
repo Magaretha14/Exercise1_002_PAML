@@ -21,12 +21,14 @@ class PokemonList extends StatelessWidget {
         padding: const EdgeInsets.only(left: 20, right: 20),
         width: 400,
         decoration: BoxDecoration(
-          shape: BoxShape.rectangle,
-          borderRadius: BorderRadius.circular(10.0),
-          color: Colors.white,
+          shape: BoxShape.rectangle, // Mengatur bentuk kotak.
+          borderRadius:
+              BorderRadius.circular(10.0), // Mengatur sudut melengkung.
+          color: Colors.white, // Mengatur warna latar belakang menjadi putih.
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.1),
+              color:
+                  Colors.grey.withOpacity(0.1), // Menambahkan bayangan ringan.
               blurRadius: 7,
               spreadRadius: 5,
               offset: const Offset(0, 3),
@@ -40,12 +42,14 @@ class PokemonList extends StatelessWidget {
               width: 100,
               height: 100,
               decoration: BoxDecoration(
-                shape: BoxShape.rectangle,
-                borderRadius: BorderRadius.circular(10.0),
-                color: Colors.amber[600],
+                shape: BoxShape.rectangle, // Mengatur bentuk kotak.
+                borderRadius:
+                    BorderRadius.circular(10.0), // Mengatur sudut melengkung.
+                color: Colors.amber[
+                    600], // Mengatur warna latar belakang kotak kekuningan.
                 image: DecorationImage(
-                  fit: BoxFit.fill,
-                  image: NetworkImage(gambar),
+                  fit: BoxFit.fill, // Mengisi gambar ke dalam kotak.
+                  image: NetworkImage(gambar), // Mengambil gambar dari URL.
                 ),
               ),
             ),
@@ -61,13 +65,17 @@ class PokemonList extends StatelessWidget {
                         padding: const EdgeInsets.only(right: 5),
                         child: Text(
                           nomor,
-                          style: const TextStyle(color: Colors.grey),
+                          style: const TextStyle(
+                              color: Colors
+                                  .grey), // Mengatur warna teks menjadi abu-abu.
                         ),
                       ),
                       Container(
                         child: Text(
                           nama_pokemon,
-                          style: const TextStyle(fontWeight: FontWeight.bold),
+                          style: const TextStyle(
+                              fontWeight: FontWeight
+                                  .bold), // Mengatur teks menjadi tebal.
                         ),
                       )
                     ],
@@ -81,14 +89,18 @@ class PokemonList extends StatelessWidget {
                       Container(
                         width: 35,
                         decoration: BoxDecoration(
-                            shape: BoxShape.rectangle,
-                            borderRadius: BorderRadius.circular(5),
-                            color: Colors.orange),
+                            shape: BoxShape.rectangle, // Mengatur bentuk kotak.
+                            borderRadius: BorderRadius.circular(
+                                5), // Mengatur sudut melengkung.
+                            color: Colors
+                                .orange), // Mengatur warna latar belakang kotak keoranyean.
                         padding: const EdgeInsets.only(left: 5),
                         child: const Text(
                           'Fire',
                           style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
+                              color: Colors.white,
+                              fontWeight: FontWeight
+                                  .bold), // Mengatur teks menjadi putih dan tebal.
                         ),
                       ),
                     ],
@@ -98,8 +110,11 @@ class PokemonList extends StatelessWidget {
                   width: 250,
                   child: Text(
                     deskripsi,
-                    textAlign: TextAlign.justify,
-                    style: const TextStyle(color: Colors.grey),
+                    textAlign: TextAlign
+                        .justify, // Mengatur teks agar rata kiri dan kanan.
+                    style: const TextStyle(
+                        color: Colors
+                            .grey), // Mengatur warna teks menjadi abu-abu.
                   ),
                 )
               ]),

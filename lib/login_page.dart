@@ -13,7 +13,6 @@ class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
 
   String? name;
-
   String? password;
 
   @override
@@ -80,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                         color: Colors.blue,
                       ),
                     ),
-                    validator: validateName,
+                    validator: validateName, // Validasi nama pengguna.
                     onSaved: (value) {
                       name = value;
                     },
@@ -117,7 +116,7 @@ class _LoginPageState extends State<LoginPage> {
                         color: Colors.grey,
                       ),
                     ),
-                    validator: validatePassword,
+                    validator: validatePassword, // Validasi password.
                     onSaved: (value) {
                       password = value;
                     },
@@ -182,6 +181,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 }
 
+// Fungsi untuk validasi nama pengguna.
 String? validateName(String? value) {
   if (value == null || value.isEmpty) {
     return "Please enter your name";
@@ -189,6 +189,7 @@ String? validateName(String? value) {
   return null;
 }
 
+// Fungsi untuk validasi password.
 String? validatePassword(String? value) {
   if (value == null || value.isEmpty) {
     return "Please enter your password";

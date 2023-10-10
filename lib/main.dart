@@ -5,20 +5,22 @@ import 'package:flutter/material.dart';
 import 'login_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MyApp()); // Memulai aplikasi dengan menjalankan MyApp.
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({super.key}); // Konstruktor MyApp dengan parameter key.
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner:
+          false, // Menyembunyikan banner debug di sudut kanan atas.
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.blue, // Mengatur tema dengan warna utama biru.
       ),
-      home: const WelcomePage(),
+      home:
+          const WelcomePage(), // Mengatur halaman awal aplikasi sebagai WelcomePage.
     );
   }
 }

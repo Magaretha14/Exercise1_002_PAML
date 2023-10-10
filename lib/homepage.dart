@@ -7,10 +7,11 @@ class HomePage extends StatefulWidget {
     this.name,
   });
 
-  final String? name;
+  final String? name; // Nama pengguna yang dapat diisi atau null.
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomePage> createState() =>
+      _HomePageState(); // Membuat state untuk HomePage.
 }
 
 class _HomePageState extends State<HomePage> {
